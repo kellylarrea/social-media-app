@@ -42,9 +42,9 @@ const Form = () => {
             multiple={false}
             onDone={(base64) => setPostData({ ...postData, selectedFile: base64})}
         />
-
     </div>
     <Button className={classes.buttonSubmit} variant="container" color="primary" size="large" type="submit" fullWidth>Submit</Button>
+    <Button className={classes.buttonSubmit} variant="contained" color="secondary" size="small" onClick={clear} fullWidth>Submit</Button>
         </form>
     </Paper>
     )
