@@ -40,7 +40,7 @@ const Form = ({ currentId, setCurrentId }) => {
 
         <Paper className={classes.paper}>
             <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
-                <Typography variant="h6">Creating a Memory</Typography>
+                <Typography variant="h6">{currentId ? 'Editing' : 'Creating' } a Memory</Typography>
 
                 <TextField name="creator" variant="outlined" label="Creator" fullWidth value={postData.creator}
                     //spread post data for in every text field and we do the same thing and only change the last property that means all data will persist but change the specific text field
