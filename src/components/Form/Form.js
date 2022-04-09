@@ -8,7 +8,7 @@ import { createPost, updatePost } from '../../actions/posts'
 
 //Get The current id on the post that we are on
 
-const Form = ( { currentId, setCurrentId }) => {
+const Form = ({ currentId, setCurrentId }) => {
     console.log('current id ', setCurrentId)
     const [postData, setPostData] = useState({ creator: '', title: '', message: '', tags: '', selectedFile: '' })
     // if we have a currentid then we want to loop over state.post and make a find method on it that has the same id as our current id then if not then it will = to null
@@ -20,7 +20,7 @@ const Form = ( { currentId, setCurrentId }) => {
     useEffect(() => {
         //if post exis then we are going to set post data
         if(post) setPostData(post)
-        //dependency array and say when this should be ran
+        //dependency array and say when this should be ran, when what changes
     }, [post])
 
     const handleSubmit = (e) => {

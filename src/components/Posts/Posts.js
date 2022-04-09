@@ -6,7 +6,7 @@ import { Grid, CircularProgress} from '@material-ui/core'
 import Post from './Post/Post'
 import useStyles from './styles'
 
-const Posts = () => {
+const Posts = ({ setCurrentId }) => {
     // initialize as a hook and return state.posts where we export combine reducers-post.js
     const posts = useSelector((state)=> state.posts)
     const classes = useStyles()
@@ -23,7 +23,7 @@ const Posts = () => {
                        //key = post._id and item xs for how large for mobile devices
                        //as props we will be sending post to each post component
                        <Grid key={post._id} item xs={12} sm={6}>
-                           <Post post={post}/>
+                           <Post post={post} setCurrentId={setCurrentId}/>
                        </Grid>
                    ))
                }
