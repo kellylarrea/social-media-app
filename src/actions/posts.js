@@ -1,3 +1,4 @@
+import { appendFileSync } from 'fs';
 import * as api from '../api' //we import everything from the actions as api
 
 // Action Creators - functions that return actions and that action is just a type and a table
@@ -27,6 +28,16 @@ export const updatePost = (id, post) => async (dispatch) =>{
         //returning the updated memory or post
         const { data } = await api.updatePost(id, post)
         dispatch({ type: 'UPDATE', payload: data})
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+export const deletePost = (id) => async (dispatch) => {
+    try {
+        //we do not need the response becauase we are not interested in the response. So no need to add const response or data and as payload just pass the id
+        await api.deletePost(id)
+        dispatch({ type: 'DELETE', payload: id})
     } catch (error) {
         console.log(error)
     }
