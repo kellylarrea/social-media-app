@@ -60,7 +60,7 @@ const Form = ({ currentId, setCurrentId }) => {
 
                 <TextField name="tags" variant="outlined" label="Tags" fullWidth value={postData.tags}
                     //spread post data for in every text field and we do the same thing and only change the last property that means all data will persist but change the specific text field
-                    onChange={(e) => setPostData({ ...postData, tags: e.target.value })}
+                    onChange={(e) => setPostData({ ...postData, tags: e.target.value.split(',') })}
                 />
                 <div className={classes.fileInput}>
                     <FileBase64
