@@ -42,3 +42,14 @@ export const deletePost = (id) => async (dispatch) => {
         console.log(error)
     }
 }
+
+export const likePost = (id) => async (dispatch) => {
+    try {
+
+        // since we are just liking post we dont need to add post to parameters and so only will include id. 
+        const { data } = await api.likePost(id)
+        dispatch({ type: 'UPDATE', payload: data})
+    } catch (error) {
+        console.log(error)
+    }
+}
