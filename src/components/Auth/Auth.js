@@ -3,7 +3,7 @@ import { Avatar, Button, Paper, Grid, Typography, Container} from '@material-ui/
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
 import useStyles from './styles'
 
-export const Auth = () => {
+const Auth = () => {
     const classes = useStyles()
   return (
    <Container component="main" maxWidth="xs">
@@ -11,7 +11,10 @@ export const Auth = () => {
     <Avatar className={classes.avatar}>
       <LockOutlinedIcon/>
        </Avatar>
+       <Typography className={}></Typography>
        </Paper>
      </Container>
   )
 }
+
+export default Auth
