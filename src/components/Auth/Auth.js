@@ -10,9 +10,8 @@ const Auth = () => {
 
     const isSignup = false
 
-    const handleShowPassword = () => {
-      
-    }
+    //toggle the state, if it is on then turn it off and if it is off turn it on
+    const handleShowPassword = () => setShowPassword((prevShowPassword) => !prevShowPassword)
 
     const handleSubmit = () => {
 
